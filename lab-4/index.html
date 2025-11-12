@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лабораторна робота №4 — HTML форми</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    form {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input, textarea, select, button {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .checkbox-group, .radio-group {
+      margin-top: 15px;
+    }
+    .checkbox-group label, .radio-group label {
+      display: inline-block;
+      margin-right: 10px;
+      font-weight: normal;
+    }
+    picture {
+      display: block;
+      margin: 30px auto;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Лабораторна робота №4 — HTML форма</h1>
+
+  <!-- 🔸 Форма з методом GET -->
+  <form action="https://httpbin.org/get" method="get">
+    <label for="fullname">Ваше ім'я:</label>
+    <input type="text" id="fullname" name="fullname" required>
+
+    <label>Ваш email:
+      <input type="email" name="email" required>
+    </label>
+
+    <label for="birthdate">Дата народження:</label>
+    <input type="date" id="birthdate" name="birthdate">
+
+    <label for="message">Повідомлення:</label>
+    <textarea id="message" name="message" rows="4"></textarea>
+
+    <!-- 🔸 Чекбокси -->
+    <div class="checkbox-group">
+      <p><strong>Ваші улюблені напої:</strong></p>
+      <label><input type="checkbox" name="drink" value="coffee"> Кава</label>
+      <label><input type="checkbox" name="drink" value="tea"> Чай</label>
+      <label><input type="checkbox" name="drink" value="juice"> Сік</label>
+      <label><input type="checkbox" name="drink" value="water"> Вода</label>
+    </div>
+
+    <!-- 🔸 Радіокнопки -->
+    <div class="radio-group">
+      <p><strong>Моя національність:</strong></p>
+      <label><input type="radio" name="nationality" value="ukrainian" checked> Українець</label>
+      <label><input type="radio" name="nationality" value="polish"> Поляк</label>
+      <label><input type="radio" name="nationality" value="german"> Німець</label>
+    </div>
+
+    <button type="submit">Відправити</button>
+    <button type="reset">Очистити</button>
+  </form>
+
+  <!-- 🔸 Тег picture -->
+  <picture>
+    <source media="(max-width: 468px)" srcset="https://picsum.photos/300/500">
+    <source media="(min-width: 469px)" srcset="https://picsum.photos/1000/400">
+    <img src="https://picsum.photos/1000/400" alt="Демонстраційне зображення">
+  </picture>
+
+</body>
+</html>
